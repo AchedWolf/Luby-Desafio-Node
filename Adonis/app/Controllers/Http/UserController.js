@@ -40,7 +40,6 @@ class UserController {
             const tokens = new Token()
             tokens.user_id = users_id[0].id
             await tokens.save()
-            console.log(users_id)
             
             users = await Database.raw(
                 'SELECT users.*, COUNT(DISTINCT followers.id) as follower, COUNT(DISTINCT followings.id) as following, COUNT(DISTINCT repositories.id) as repositor '+
